@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'rails', '>= 4.2'
-  s.add_dependency 'sidekiq', '>= 4.0', '<= 7.3.9'
+  s.add_dependency 'rails', '>= 7.1'
+  s.add_dependency 'sidekiq', '>= 4.0', '< 9'
   s.add_dependency 'jwt', '~> 2.1'
 
   s.add_development_dependency 'pg'

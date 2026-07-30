@@ -1,7 +1,7 @@
 module AsyncRequest
   class Job < ActiveRecord::Base # rubocop:disable Rails/ApplicationRecord
-    serialize :params, Array
-    enum status: { waiting: 0, processing: 1, processed: 2, failed: 3 }
+    serialize :params, type: Array, coder: YAML
+    enum :status, { waiting: 0, processing: 1, processed: 2, failed: 3 }
 
     def self.create_and_enqueue(worker_class, *params)
       raise ArgumentError if worker_class.nil?
